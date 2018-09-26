@@ -169,25 +169,17 @@ namespace WindowsFormsApp2
         private void Purchaser_Save()
         {
             string strData = String.Empty;
-            string strResult = String.Empty;
-            
+            string strResult = String.Empty;          
             for (int i = 0; i < Purchaser_Data.RowCount-1; i++)
             {
                 strData = String.Empty;
                 for (int j = 0; j < Purchaser_Data.ColumnCount-1; j++)
                 {
                     strData+=Purchaser_Data[j,i].Value.ToString() + ",";
-                }
-                
+                }               
                strData = strData.Trim(',');
                 strResult += strData + Environment.NewLine;
-                
-
-
-            }
-        
-            //strResult += Purchaser_Data.ColumnCount;
-            //strResult += Purchaser_Data.RowCount;
+            }       
             using (StreamWriter sw = new StreamWriter(@"D:\Purchaser3.csv", false, Encoding.Default))
             {
                 sw.Write(strResult);
@@ -201,6 +193,19 @@ namespace WindowsFormsApp2
         private void Data_Refresh_Click(object sender, EventArgs e)
         {
             Purchaser_Load();
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            for (int i = 0; i < Data_List.CheckedItems.Count; i++)
+            {
+                switch (Data_List.CheckedIndices[i])
+                {
+                    case 0: MessageBox.Show("0"); break;
+                    case 1: MessageBox.Show("1"); break;
+                    default: break;
+                }
+            }
         }
     }
 
