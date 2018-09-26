@@ -54,9 +54,9 @@ namespace WindowsFormsApp2
         {
             //Purchaser_Name.Text = Purchaser_Data[1, 1].Value.ToString();
             //Load_Purchaser();
-            //Purchaser_Save();
+            Purchaser_Save();
             //Data_Select();
-            Data_Delete();
+            //Data_Delete();
         }
 
         private void Calculate_Click(object sender, EventArgs e)
@@ -119,7 +119,7 @@ namespace WindowsFormsApp2
 
                 string AllData = sr.ReadLine();
                 string[] All_array = AllData.Split(",".ToCharArray());
-                rows.Add(new Object[] { All_array[0], All_array[1], All_array[2], All_array[6] });
+                rows.Add(new Object[] { All_array[0], All_array[1], All_array[2], All_array[3], All_array[4], All_array[5], All_array[6] });
                 int.TryParse(All_array[6],out number);
                 Total = Total + number;
             }
@@ -170,18 +170,25 @@ namespace WindowsFormsApp2
         {
             string strData = String.Empty;
             string strResult = String.Empty;
-            for (int i = 0; i <= 4; i++)
+            
+            for (int i = 0; i < Purchaser_Data.RowCount-1; i++)
             {
                 strData = String.Empty;
-                for (int j = 0; j <= 4; j++)
+                for (int j = 0; j < Purchaser_Data.ColumnCount-1; j++)
                 {
-                    strData=Purchaser_Data[i, j].Value.ToString() + ",";
+                    strData+=Purchaser_Data[j,i].Value.ToString() + ",";
                 }
-                strData = strData.Trim(',');
+                
+               strData = strData.Trim(',');
                 strResult += strData + Environment.NewLine;
+                
+
 
             }
-            using (StreamWriter sw = new StreamWriter(@"D:\Purchaser1.csv", false, Encoding.Default))
+        
+            //strResult += Purchaser_Data.ColumnCount;
+            //strResult += Purchaser_Data.RowCount;
+            using (StreamWriter sw = new StreamWriter(@"D:\Purchaser3.csv", false, Encoding.Default))
             {
                 sw.Write(strResult);
             }

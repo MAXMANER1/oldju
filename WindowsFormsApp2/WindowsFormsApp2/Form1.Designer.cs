@@ -32,7 +32,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.Receiver_Amount = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.btn_test = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.btn_Purchaser = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -49,19 +48,23 @@
             this.Purchaser_Name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.Purchaser_Data = new System.Windows.Forms.DataGridView();
-            this.Data_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Data_phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Data_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Data_amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label_total = new System.Windows.Forms.Label();
-            this.Total_Nuber = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.Price_Single = new System.Windows.Forms.TextBox();
+            this.Calculate = new System.Windows.Forms.Button();
             this.Price_Total = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.Calculate = new System.Windows.Forms.Button();
+            this.Price_Single = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.Total_Nuber = new System.Windows.Forms.TextBox();
+            this.label_total = new System.Windows.Forms.Label();
+            this.btn_test = new System.Windows.Forms.Button();
+            this.Purchaser_Data = new System.Windows.Forms.DataGridView();
             this.Data_Refresh = new System.Windows.Forms.Button();
+            this.PurchaserD_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PurchaserD_Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PurchaserD_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReceiverD_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReceiverD_Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReceiverD_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PurchaserD_amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -120,16 +123,6 @@
             this.label9.Size = new System.Drawing.Size(41, 15);
             this.label9.TabIndex = 16;
             this.label9.Text = "數量:";
-            // 
-            // btn_test
-            // 
-            this.btn_test.Location = new System.Drawing.Point(1021, 433);
-            this.btn_test.Name = "btn_test";
-            this.btn_test.Size = new System.Drawing.Size(75, 23);
-            this.btn_test.TabIndex = 15;
-            this.btn_test.Text = "刪除";
-            this.btn_test.UseVisualStyleBackColor = true;
-            this.btn_test.Click += new System.EventHandler(this.btn_test_Click);
             // 
             // label8
             // 
@@ -274,75 +267,15 @@
             this.tabPage2.Text = "統計";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // Purchaser_Data
+            // Calculate
             // 
-            this.Purchaser_Data.AllowUserToOrderColumns = true;
-            this.Purchaser_Data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Purchaser_Data.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Data_Name,
-            this.Data_phone,
-            this.Data_Address,
-            this.Data_amount});
-            this.Purchaser_Data.Location = new System.Drawing.Point(647, 46);
-            this.Purchaser_Data.Name = "Purchaser_Data";
-            this.Purchaser_Data.RowTemplate.Height = 27;
-            this.Purchaser_Data.Size = new System.Drawing.Size(545, 365);
-            this.Purchaser_Data.TabIndex = 1;
-            // 
-            // Data_Name
-            // 
-            this.Data_Name.HeaderText = "姓名";
-            this.Data_Name.Name = "Data_Name";
-            // 
-            // Data_phone
-            // 
-            this.Data_phone.HeaderText = "電話";
-            this.Data_phone.Name = "Data_phone";
-            this.Data_phone.Width = 150;
-            // 
-            // Data_Address
-            // 
-            this.Data_Address.HeaderText = "地址";
-            this.Data_Address.Name = "Data_Address";
-            this.Data_Address.Width = 200;
-            // 
-            // Data_amount
-            // 
-            this.Data_amount.HeaderText = "數量";
-            this.Data_amount.Name = "Data_amount";
-            this.Data_amount.Width = 50;
-            // 
-            // label_total
-            // 
-            this.label_total.AutoSize = true;
-            this.label_total.Location = new System.Drawing.Point(32, 35);
-            this.label_total.Name = "label_total";
-            this.label_total.Size = new System.Drawing.Size(41, 15);
-            this.label_total.TabIndex = 0;
-            this.label_total.Text = "數量:";
-            // 
-            // Total_Nuber
-            // 
-            this.Total_Nuber.Location = new System.Drawing.Point(85, 35);
-            this.Total_Nuber.Name = "Total_Nuber";
-            this.Total_Nuber.Size = new System.Drawing.Size(100, 25);
-            this.Total_Nuber.TabIndex = 1;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(35, 80);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 15);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "單價:";
-            // 
-            // Price_Single
-            // 
-            this.Price_Single.Location = new System.Drawing.Point(85, 80);
-            this.Price_Single.Name = "Price_Single";
-            this.Price_Single.Size = new System.Drawing.Size(100, 25);
-            this.Price_Single.TabIndex = 3;
+            this.Calculate.Location = new System.Drawing.Point(321, 161);
+            this.Calculate.Name = "Calculate";
+            this.Calculate.Size = new System.Drawing.Size(75, 23);
+            this.Calculate.TabIndex = 6;
+            this.Calculate.Text = "計算";
+            this.Calculate.UseVisualStyleBackColor = true;
+            this.Calculate.Click += new System.EventHandler(this.Calculate_Click);
             // 
             // Price_Total
             // 
@@ -360,15 +293,65 @@
             this.label11.TabIndex = 4;
             this.label11.Text = "總收入:";
             // 
-            // Calculate
+            // Price_Single
             // 
-            this.Calculate.Location = new System.Drawing.Point(321, 161);
-            this.Calculate.Name = "Calculate";
-            this.Calculate.Size = new System.Drawing.Size(75, 23);
-            this.Calculate.TabIndex = 6;
-            this.Calculate.Text = "計算";
-            this.Calculate.UseVisualStyleBackColor = true;
-            this.Calculate.Click += new System.EventHandler(this.Calculate_Click);
+            this.Price_Single.Location = new System.Drawing.Point(85, 80);
+            this.Price_Single.Name = "Price_Single";
+            this.Price_Single.Size = new System.Drawing.Size(100, 25);
+            this.Price_Single.TabIndex = 3;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(35, 80);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(41, 15);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "單價:";
+            // 
+            // Total_Nuber
+            // 
+            this.Total_Nuber.Location = new System.Drawing.Point(85, 35);
+            this.Total_Nuber.Name = "Total_Nuber";
+            this.Total_Nuber.Size = new System.Drawing.Size(100, 25);
+            this.Total_Nuber.TabIndex = 1;
+            // 
+            // label_total
+            // 
+            this.label_total.AutoSize = true;
+            this.label_total.Location = new System.Drawing.Point(32, 35);
+            this.label_total.Name = "label_total";
+            this.label_total.Size = new System.Drawing.Size(41, 15);
+            this.label_total.TabIndex = 0;
+            this.label_total.Text = "數量:";
+            // 
+            // btn_test
+            // 
+            this.btn_test.Location = new System.Drawing.Point(1021, 433);
+            this.btn_test.Name = "btn_test";
+            this.btn_test.Size = new System.Drawing.Size(75, 23);
+            this.btn_test.TabIndex = 15;
+            this.btn_test.Text = "刪除";
+            this.btn_test.UseVisualStyleBackColor = true;
+            this.btn_test.Click += new System.EventHandler(this.btn_test_Click);
+            // 
+            // Purchaser_Data
+            // 
+            this.Purchaser_Data.AllowUserToOrderColumns = true;
+            this.Purchaser_Data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Purchaser_Data.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.PurchaserD_Name,
+            this.PurchaserD_Phone,
+            this.PurchaserD_Address,
+            this.ReceiverD_Name,
+            this.ReceiverD_Phone,
+            this.ReceiverD_Address,
+            this.PurchaserD_amount});
+            this.Purchaser_Data.Location = new System.Drawing.Point(631, 46);
+            this.Purchaser_Data.Name = "Purchaser_Data";
+            this.Purchaser_Data.RowTemplate.Height = 27;
+            this.Purchaser_Data.Size = new System.Drawing.Size(692, 375);
+            this.Purchaser_Data.TabIndex = 1;
             // 
             // Data_Refresh
             // 
@@ -380,11 +363,49 @@
             this.Data_Refresh.UseVisualStyleBackColor = true;
             this.Data_Refresh.Click += new System.EventHandler(this.Data_Refresh_Click);
             // 
+            // PurchaserD_Name
+            // 
+            this.PurchaserD_Name.HeaderText = "購買人姓名";
+            this.PurchaserD_Name.Name = "PurchaserD_Name";
+            // 
+            // PurchaserD_Phone
+            // 
+            this.PurchaserD_Phone.HeaderText = "購買人電話";
+            this.PurchaserD_Phone.Name = "PurchaserD_Phone";
+            this.PurchaserD_Phone.Width = 150;
+            // 
+            // PurchaserD_Address
+            // 
+            this.PurchaserD_Address.HeaderText = "購買人地址";
+            this.PurchaserD_Address.Name = "PurchaserD_Address";
+            this.PurchaserD_Address.Width = 200;
+            // 
+            // ReceiverD_Name
+            // 
+            this.ReceiverD_Name.HeaderText = "收貨人姓名";
+            this.ReceiverD_Name.Name = "ReceiverD_Name";
+            // 
+            // ReceiverD_Phone
+            // 
+            this.ReceiverD_Phone.HeaderText = "收貨人電話";
+            this.ReceiverD_Phone.Name = "ReceiverD_Phone";
+            // 
+            // ReceiverD_Address
+            // 
+            this.ReceiverD_Address.HeaderText = "收貨人地址";
+            this.ReceiverD_Address.Name = "ReceiverD_Address";
+            // 
+            // PurchaserD_amount
+            // 
+            this.PurchaserD_amount.HeaderText = "數量";
+            this.PurchaserD_amount.Name = "PurchaserD_amount";
+            this.PurchaserD_amount.Width = 50;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1329, 613);
+            this.ClientSize = new System.Drawing.Size(1376, 674);
             this.Controls.Add(this.Data_Refresh);
             this.Controls.Add(this.Purchaser_Data);
             this.Controls.Add(this.btn_test);
@@ -423,10 +444,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView Purchaser_Data;
         private System.Windows.Forms.Button btn_test;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Data_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Data_phone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Data_Address;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Data_amount;
         private System.Windows.Forms.TextBox Receiver_Amount;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label_total;
@@ -437,6 +454,19 @@
         private System.Windows.Forms.TextBox Price_Single;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button Data_Refresh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data_phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data_Address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data_amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PurchaserD_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PurchaserD_Phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PurchaserD_Address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ReceiverD_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ReceiverD_Phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ReceiverD_Address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PurchaserD_amount;
     }
 }
 
