@@ -22,7 +22,9 @@ namespace WindowsFormsApp2
         {
             
             InitializeComponent();
-            Purchaser_Load();           
+            Purchaser_Load();
+            Data_List.SetItemChecked(0, true);
+            Data_List.SetItemChecked(1, true);
         }
         #region btn_Event
 
@@ -64,7 +66,23 @@ namespace WindowsFormsApp2
             int.TryParse(Price_Single.Text, out var n);
             Price_Total.Text = (n * Purchaser_Load()).ToString();
         }
+        private void Data_Refresh_Click(object sender, EventArgs e)
+        {
+            Purchaser_Load();
+        }
 
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bool[] checklist = new bool[] { List_check(0), List_check(1) };
+            //Data_List.SetItemChecked(0, true);
+            //Data_List.SetItemChecked(1, true);
+            this.Purchaser_Data.Columns["PurchaserD_Name"].Visible = checklist[0];
+            this.Purchaser_Data.Columns["PurchaserD_Phone"].Visible = checklist[0];
+            this.Purchaser_Data.Columns["PurchaserD_Address"].Visible = checklist[0];
+            this.Purchaser_Data.Columns["ReceiverD_Name"].Visible = checklist[1];
+            this.Purchaser_Data.Columns["ReceiverD_Phone"].Visible = checklist[1];
+            this.Purchaser_Data.Columns["ReceiverD_Address"].Visible = checklist[1];
+        }
         #endregion
 
         #region function
@@ -72,13 +90,13 @@ namespace WindowsFormsApp2
         private void Purchaser_Write(List<String> Purchaser)
         {
             Purchaser.Add(Purchaser_Name.Text);
-            Purchaser.Add(Puchaser_Phone.Text);
+            Purchaser.Add(Purchaser_Phone.Text);
             Purchaser.Add(Purchaser_Address.Text);
         //if receiver data is empty get purchaser data
             if (Receiver_Name.Text== String.Empty)
             {
                 Purchaser.Add(Purchaser_Name.Text);
-                Purchaser.Add(Puchaser_Phone.Text);
+                Purchaser.Add(Purchaser_Phone.Text);
                 Purchaser.Add(Purchaser_Address.Text);
                 Purchaser.Add(Receiver_Amount.Text);
             }
@@ -97,7 +115,7 @@ namespace WindowsFormsApp2
         {
             
             Purchaser_Name.Text = null;
-            Puchaser_Phone.Text = null;
+            Purchaser_Phone.Text = null;
             Purchaser_Address.Text = null;
             Receiver_Name.Text = null;
             Receiver_Phone.Text = null;
@@ -185,29 +203,41 @@ namespace WindowsFormsApp2
                 sw.Write(strResult);
             }
         }
-
-
-
-        #endregion
-
-        private void Data_Refresh_Click(object sender, EventArgs e)
+        private Boolean List_check(int index)
         {
-            Purchaser_Load();
-        }
 
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            for (int i = 0; i < Data_List.CheckedItems.Count; i++)
+            if (Data_List.GetItemChecked(index))
             {
-                switch (Data_List.CheckedIndices[i])
-                {
-                    case 0: MessageBox.Show("0"); break;
-                    case 1: MessageBox.Show("1"); break;
-                    default: break;
-                }
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
+
+        private void btn_Revise_Click(object sender, EventArgs e)
+        {
+            //DataGridViewTextBoxCell cell = (DataGridViewTextBoxCell)Purchaser_Data.CurrentRow.Cells[0];
+            Purchaser_Name.Text=Purchaser_Data.CurrentRow.Cells[0].Value.ToString();
+            Purchaser_Phone.Text = Purchaser_Data.CurrentRow.Cells[1].Value.ToString();
+            Purchaser_Address.Text = Purchaser_Data.CurrentRow.Cells[2].Value.ToString();
+            Receiver_Name.Text = Purchaser_Data.CurrentRow.Cells[3].Value.ToString();
+            Receiver_Phone.Text = Purchaser_Data.CurrentRow.Cells[4].Value.ToString();
+            Receiver_Address.Text= Purchaser_Data.CurrentRow.Cells[5].Value.ToString();
+            Receiver_Amount.Text= Purchaser_Data.CurrentRow.Cells[6].Value.ToString();
+            //var a=Purchaser_Data.SelectedRows[0].Index;
+            //return Purchaser_Data.CurrentCell.RowIndex;
+        }
     }
+
+
+
+
+
+    #endregion
+
+
 
 
 

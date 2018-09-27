@@ -43,7 +43,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.Purchaser_Address = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.Puchaser_Phone = new System.Windows.Forms.TextBox();
+            this.Purchaser_Phone = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Purchaser_Name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -57,7 +57,6 @@
             this.label_total = new System.Windows.Forms.Label();
             this.btn_Save = new System.Windows.Forms.Button();
             this.Purchaser_Data = new System.Windows.Forms.DataGridView();
-            this.Data_Refresh = new System.Windows.Forms.Button();
             this.PurchaserD_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PurchaserD_Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PurchaserD_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,7 +64,9 @@
             this.ReceiverD_Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ReceiverD_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PurchaserD_amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data_Refresh = new System.Windows.Forms.Button();
             this.Data_List = new System.Windows.Forms.CheckedListBox();
+            this.btn_Revise = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -97,7 +98,7 @@
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.Purchaser_Address);
             this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.Puchaser_Phone);
+            this.tabPage1.Controls.Add(this.Purchaser_Phone);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.Purchaser_Name);
             this.tabPage1.Controls.Add(this.label1);
@@ -219,12 +220,12 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "購買人地址: ";
             // 
-            // Puchaser_Phone
+            // Purchaser_Phone
             // 
-            this.Puchaser_Phone.Location = new System.Drawing.Point(330, 56);
-            this.Puchaser_Phone.Name = "Puchaser_Phone";
-            this.Puchaser_Phone.Size = new System.Drawing.Size(100, 25);
-            this.Puchaser_Phone.TabIndex = 3;
+            this.Purchaser_Phone.Location = new System.Drawing.Point(330, 56);
+            this.Purchaser_Phone.Name = "Purchaser_Phone";
+            this.Purchaser_Phone.Size = new System.Drawing.Size(100, 25);
+            this.Purchaser_Phone.TabIndex = 3;
             // 
             // label2
             // 
@@ -354,16 +355,6 @@
             this.Purchaser_Data.Size = new System.Drawing.Size(777, 375);
             this.Purchaser_Data.TabIndex = 1;
             // 
-            // Data_Refresh
-            // 
-            this.Data_Refresh.Location = new System.Drawing.Point(1117, 433);
-            this.Data_Refresh.Name = "Data_Refresh";
-            this.Data_Refresh.Size = new System.Drawing.Size(75, 23);
-            this.Data_Refresh.TabIndex = 2;
-            this.Data_Refresh.Text = "刷新";
-            this.Data_Refresh.UseVisualStyleBackColor = true;
-            this.Data_Refresh.Click += new System.EventHandler(this.Data_Refresh_Click);
-            // 
             // PurchaserD_Name
             // 
             this.PurchaserD_Name.HeaderText = "購買人姓名";
@@ -402,24 +393,45 @@
             this.PurchaserD_amount.Name = "PurchaserD_amount";
             this.PurchaserD_amount.Width = 50;
             // 
+            // Data_Refresh
+            // 
+            this.Data_Refresh.Location = new System.Drawing.Point(1117, 433);
+            this.Data_Refresh.Name = "Data_Refresh";
+            this.Data_Refresh.Size = new System.Drawing.Size(75, 23);
+            this.Data_Refresh.TabIndex = 2;
+            this.Data_Refresh.Text = "刷新";
+            this.Data_Refresh.UseVisualStyleBackColor = true;
+            this.Data_Refresh.Click += new System.EventHandler(this.Data_Refresh_Click);
+            // 
             // Data_List
             // 
+            this.Data_List.CheckOnClick = true;
             this.Data_List.FormattingEnabled = true;
             this.Data_List.Items.AddRange(new object[] {
             "購買人",
-            "收貨人",
-            "數量"});
+            "收貨人"});
             this.Data_List.Location = new System.Drawing.Point(576, 433);
             this.Data_List.Name = "Data_List";
             this.Data_List.Size = new System.Drawing.Size(120, 84);
             this.Data_List.TabIndex = 16;
             this.Data_List.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
+            // btn_Revise
+            // 
+            this.btn_Revise.Location = new System.Drawing.Point(763, 432);
+            this.btn_Revise.Name = "btn_Revise";
+            this.btn_Revise.Size = new System.Drawing.Size(75, 23);
+            this.btn_Revise.TabIndex = 17;
+            this.btn_Revise.Text = "修改";
+            this.btn_Revise.UseVisualStyleBackColor = true;
+            this.btn_Revise.Click += new System.EventHandler(this.btn_Revise_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1376, 674);
+            this.Controls.Add(this.btn_Revise);
             this.Controls.Add(this.Data_List);
             this.Controls.Add(this.Data_Refresh);
             this.Controls.Add(this.Purchaser_Data);
@@ -451,7 +463,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox Purchaser_Address;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox Puchaser_Phone;
+        private System.Windows.Forms.TextBox Purchaser_Phone;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox Purchaser_Name;
         private System.Windows.Forms.Label label1;
@@ -483,6 +495,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ReceiverD_Address;
         private System.Windows.Forms.DataGridViewTextBoxColumn PurchaserD_amount;
         private System.Windows.Forms.CheckedListBox Data_List;
+        private System.Windows.Forms.Button btn_Revise;
     }
 }
 
