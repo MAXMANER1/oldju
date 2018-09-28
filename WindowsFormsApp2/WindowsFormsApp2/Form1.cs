@@ -57,7 +57,6 @@ namespace WindowsFormsApp2
             //Purchaser_Name.Text = Purchaser_Data[1, 1].Value.ToString();
             //Load_Purchaser();
             Purchaser_Save();
-            //Data_Select();
             //Data_Delete();
         }
 
@@ -74,8 +73,6 @@ namespace WindowsFormsApp2
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             bool[] checklist = new bool[] { List_check(0), List_check(1) };
-            //Data_List.SetItemChecked(0, true);
-            //Data_List.SetItemChecked(1, true);
             this.Purchaser_Data.Columns["PurchaserD_Name"].Visible = checklist[0];
             this.Purchaser_Data.Columns["PurchaserD_Phone"].Visible = checklist[0];
             this.Purchaser_Data.Columns["PurchaserD_Address"].Visible = checklist[0];
@@ -157,32 +154,15 @@ namespace WindowsFormsApp2
 
         }
 
-        //NOT COMPLETE BELOW
         private void Data_Delete()
         {
             
             //if (Purchaser_Data.CurrentCell != null)
-            //Purchaser_Data.
             foreach (DataGridViewRow r in Purchaser_Data.SelectedRows)
             {
-                //Purchaser_Name.Text = Purchaser_Data[1, 1].Value.ToString();
-                Purchaser_Data.Rows.Remove(r);
-                    
+                Purchaser_Data.Rows.Remove(r);                   
             }
-        }
-        private void Data_Select()
-        {
-
-            //if (Purchaser_Data.CurrentCell != null)
-            foreach (DataGridViewRow r in Purchaser_Data.SelectedRows)
-            {
-                // Purchaser_Name.Text = Purchaser_Data[1,1].Value.ToString();                            
-                Purchaser_Data.Rows.Remove(r);
-
-
-            }
-        }
-        
+        }       
         
         private void Purchaser_Save()
         {
@@ -218,6 +198,8 @@ namespace WindowsFormsApp2
 
         private void btn_Revise_Click(object sender, EventArgs e)
         {
+            //myButton.BackColor = default(Color);
+            this.Invoke(new Action(() => { btn_Revise.BackColor = Color.LightGreen; }));            
             //DataGridViewTextBoxCell cell = (DataGridViewTextBoxCell)Purchaser_Data.CurrentRow.Cells[0];
             Purchaser_Name.Text=Purchaser_Data.CurrentRow.Cells[0].Value.ToString();
             Purchaser_Phone.Text = Purchaser_Data.CurrentRow.Cells[1].Value.ToString();
