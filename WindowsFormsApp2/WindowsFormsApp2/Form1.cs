@@ -19,8 +19,7 @@ namespace WindowsFormsApp2
         
 
         public Form1()
-        {
-            
+        {           
             InitializeComponent();
             Purchaser_Load();
             Data_List.SetItemChecked(0, true);
@@ -67,6 +66,7 @@ namespace WindowsFormsApp2
         }
         private void Data_Refresh_Click(object sender, EventArgs e)
         {
+            
             Purchaser_Load();
         }
 
@@ -210,6 +210,11 @@ namespace WindowsFormsApp2
             Receiver_Amount.Text= Purchaser_Data.CurrentRow.Cells[6].Value.ToString();
             //var a=Purchaser_Data.SelectedRows[0].Index;
             //return Purchaser_Data.CurrentCell.RowIndex;
+        }
+
+        private void schedule_TextChanged(object sender, EventArgs e)
+        {
+            schedule.Text = " SQL and Android APP";
         }
     }
 

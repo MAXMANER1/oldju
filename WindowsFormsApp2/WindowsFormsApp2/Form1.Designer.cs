@@ -67,16 +67,20 @@
             this.Data_Refresh = new System.Windows.Forms.Button();
             this.Data_List = new System.Windows.Forms.CheckedListBox();
             this.btn_Revise = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.schedule = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Purchaser_Data)).BeginInit();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(12, 21);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -329,7 +333,7 @@
             // 
             // btn_Save
             // 
-            this.btn_Save.Location = new System.Drawing.Point(1021, 433);
+            this.btn_Save.Location = new System.Drawing.Point(1255, 433);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(75, 23);
             this.btn_Save.TabIndex = 15;
@@ -395,7 +399,7 @@
             // 
             // Data_Refresh
             // 
-            this.Data_Refresh.Location = new System.Drawing.Point(1117, 433);
+            this.Data_Refresh.Location = new System.Drawing.Point(818, 433);
             this.Data_Refresh.Name = "Data_Refresh";
             this.Data_Refresh.Size = new System.Drawing.Size(75, 23);
             this.Data_Refresh.TabIndex = 2;
@@ -418,13 +422,33 @@
             // 
             // btn_Revise
             // 
-            this.btn_Revise.Location = new System.Drawing.Point(763, 432);
+            this.btn_Revise.Location = new System.Drawing.Point(716, 433);
             this.btn_Revise.Name = "btn_Revise";
             this.btn_Revise.Size = new System.Drawing.Size(75, 23);
             this.btn_Revise.TabIndex = 17;
             this.btn_Revise.Text = "修改";
             this.btn_Revise.UseVisualStyleBackColor = true;
             this.btn_Revise.Click += new System.EventHandler(this.btn_Revise_Click);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.schedule);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(554, 361);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Schedule";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // schedule
+            // 
+            this.schedule.Location = new System.Drawing.Point(35, 34);
+            this.schedule.Multiline = true;
+            this.schedule.Name = "schedule";
+            this.schedule.Size = new System.Drawing.Size(229, 289);
+            this.schedule.TabIndex = 0;
+            this.schedule.TextChanged += new System.EventHandler(this.schedule_TextChanged);
             // 
             // Form1
             // 
@@ -445,6 +469,8 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Purchaser_Data)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -496,6 +522,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PurchaserD_amount;
         private System.Windows.Forms.CheckedListBox Data_List;
         private System.Windows.Forms.Button btn_Revise;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TextBox schedule;
     }
 }
 
